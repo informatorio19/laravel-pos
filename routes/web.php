@@ -4,4 +4,4 @@
 
 Route::resource('articulos', 'ArticulosController');
 
-
+Route::resource('categorias', 'CategoriasController');

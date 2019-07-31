@@ -20,6 +20,7 @@
                         <th>Art</th>
                         <th>Precio</th>
                         <th>Stock</th>
+                        <th>Acciones</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -29,6 +30,24 @@
                             <td>{{$articulo->articulo}}</td>
                             <td>{{$articulo->precio}}</td>
                             <td>{{$articulo->stock}}</td>
+                            <td>
+                                <div class="button-group">
+                                <form
+                                    action="{{route('articulos.destroy',$articulo->id)}}"
+                                    method="POST"
+                                    >
+                                    @csrf
+                                    @method('DELETE')
+                                        <button
+                                            class="btn btn-danger"
+                                            type="submit"
+                                            >
+                                            Eliminar</button>
+                                    </form>
+
+                                    <a href="{{route('articulos.edit',$articulo->id)}}" class="btn btn-primary">Editar</a>
+                                </div>
+                            </td>
                         </tr>
                     @endforeach
 

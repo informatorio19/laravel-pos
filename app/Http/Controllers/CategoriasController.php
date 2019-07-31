@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Articulo;
+use App\Categoria;
 use Illuminate\Http\Request;
 
-class ArticulosController extends Controller
+class CategoriasController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,10 +14,11 @@ class ArticulosController extends Controller
      */
     public function index()
     {
-        $articulos = Articulo::all();
+        $categorias = Categoria::all();
 
-        return view('articulos.index',compact('articulos'));
+        return view('categorias.index',compact('categorias'));
     }
+
     /**
      * Show the form for creating a new resource.
      *
@@ -25,7 +26,7 @@ class ArticulosController extends Controller
      */
     public function create()
     {
-        return view('articulos.create');
+        //
     }
 
     /**
@@ -36,9 +37,7 @@ class ArticulosController extends Controller
      */
     public function store(Request $request)
     {
-        $articulo = Articulo::create($request->all());
-
-        return redirect()->route('articulos.index');
+        //
     }
 
     /**
@@ -49,7 +48,7 @@ class ArticulosController extends Controller
      */
     public function show($id)
     {
-
+        //
     }
 
     /**
@@ -60,10 +59,7 @@ class ArticulosController extends Controller
      */
     public function edit($id)
     {
-        $articulo = Articulo::find($id);
-
-        return view('articulos.edit',compact('articulo'));
-
+        //
     }
 
     /**
@@ -75,17 +71,7 @@ class ArticulosController extends Controller
      */
     public function update(Request $request, $id)
     {
-       $articulo = Articulo::find($id);
-
-    //    $articulo->articulo = $request->articulo;
-    //    $articulo->precio = $request->precio;
-    //    $articulo->stock = $request->stock;
-
-        $articulo->update($request->all());
-
-        return redirect()->route('articulos.index');
-
-
+        //
     }
 
     /**
@@ -96,19 +82,6 @@ class ArticulosController extends Controller
      */
     public function destroy($id)
     {
-        $articulo = Articulo::find($id);
-        $articulo->delete();
-        return redirect()->route('articulos.index');
+        //
     }
-
-
-
-
-
-
-
-    // public function listar(){
-    //     $articulos = Articulo::where('articulo','LIKE','c%')->get();
-    //     return view('articulos.prueba',compact('articulos'));
-    // }
 }
