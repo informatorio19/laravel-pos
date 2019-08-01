@@ -24,6 +24,18 @@
                         <input type="text" class="form-control" name="precio">
                     </div>
 
+                    <div class="form-group">
+                        <label for="">Categoria</label>
+                        <select name="categoria_id" id="" class="form-control">
+
+                            @foreach($categorias as $categoria)
+                            <option value="{{$categoria->id}}">{{$categoria->categoria}}</option>
+                            @endforeach
+
+                        </select>
+                    </div>
+
+
                     <button type="submit" class="btn btn-info">Guardar</button>
 
 

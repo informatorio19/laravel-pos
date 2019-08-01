@@ -29,6 +29,24 @@
                         <input type="text" class="form-control" name="precio" value="{{$articulo->precio}}">
                     </div>
 
+                    <div class="form-group">
+                            <label for="">Categoria</label>
+                            <select name="categoria_id" id="" class="form-control">
+
+                                @foreach($categorias as $categoria)
+                                   @if ($categoria->id == $articulo->categoria_id)
+                                    <option value="{{$categoria->id}}" selected>{{$categoria->categoria}}</option>
+
+                                   @else
+                                    <option value="{{$categoria->id}}">{{$categoria->categoria}}</option>
+
+                                   @endif
+
+                                @endforeach
+
+                            </select>
+                        </div>
+
                     <button type="submit" class="btn btn-info">Actualizar</button>
 
 

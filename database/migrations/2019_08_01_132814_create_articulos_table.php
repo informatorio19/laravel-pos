@@ -19,7 +19,14 @@ class CreateArticulosTable extends Migration
             $table->integer('stock');
             $table->float('precio');
 
+            $table->unsignedBigInteger('categoria_id');
+
+
             $table->timestamps();
+
+            $table->foreign('categoria_id')->references('id')->on('categorias');
+
+
         });
     }
 

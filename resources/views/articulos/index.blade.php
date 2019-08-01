@@ -20,16 +20,19 @@
                         <th>Art</th>
                         <th>Precio</th>
                         <th>Stock</th>
+                        <th>Categoria</th>
                         <th>Acciones</th>
                     </tr>
                 </thead>
                 <tbody>
+
                     @foreach ($articulos as $articulo)
                         <tr>
                             <td>{{$articulo->id}}</td>
                             <td>{{$articulo->articulo}}</td>
                             <td>{{$articulo->precio}}</td>
                             <td>{{$articulo->stock}}</td>
+                            <td>{{$articulo->categoria->categoria}}</td>
                             <td>
                                 <div class="button-group">
                                 <form
